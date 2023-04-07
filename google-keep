@@ -1,0 +1,84 @@
+<input type="color" id="note-color" name="color-picker" list="color-options" value="#FFFFFF" class="note-color">
+                  <datalist id="color-options">
+                    <option value="#F28B82">Red</option>
+                    <option value="#FBBC04">Orange</option>
+                    <option value="#FFF475">Yellow</option>
+                    <option value="#CCFF90">Green</option>
+                    <option value="#A7FFEB">Teal</option>
+                    <option value="#CBF0F8">Blue</option>
+                    <option value="#AECBFA">Dark Blue</option>
+                    <option value="#D7AEFB">Purple</option>
+                    <option value="#FDCFE8">Pink</option>
+                    <option value="#E6C9A8">Brown</option>
+                    <option value="#E8EAED">Grey</option>
+                  </datalist>
+                  
+                  
+                  
+                  
+                  
+                  <div class="circle" data-color="red"></div>
+                    <div class="circle" data-color="orange"></div>
+                    <div class="circle" data-color="yellow"></div>
+                    <div class="circle" data-color="green"></div>
+                    <div class="circle" data-color="teal"></div>
+                    <div class="circle" data-color="blue"></div>
+                    <div class="circle" data-color="dark-blue"></div>
+                    <div class="circle" data-color="purple"></div>
+                    <div class="circle" data-color="pink"></div>
+                    <div class="circle" data-color="brown"></div>
+                    <div class="circle" data-color="grey"></div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="modal-content">
+          <div class="form-container active-form">
+            <form id="edit-form">
+              <input type="text" class="note-title" placeholder="Title" id="editable-title" />
+              <input
+                class="note-text"
+                type="text"
+                placeholder="Take a note..."
+                id="editable-content"
+              />
+              <div class="form-actions">
+                <div class="icons">
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >palette</span
+                    >
+                    <span class="tooltip-text">Change Color</span>
+                  </div>
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >image</span
+                    >
+                    <span class="tooltip-text">Add Image</span>
+                  </div>
+                </div>
+                <button type="button" class="modal-close-btn">Close</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+
+
+
+
+        const modal = document.querySelector(".modal");
+      const overlay = document.querySelector(".overlay");
+      modal.classList.remove("hidden");
+      overlay.classList.remove("hidden");
+
+      document.querySelector('.modal-close-btn').addEventListener('click', () => {
+        modal.classList.add("hidden");
+        overlay.classList.add("hidden");
+      });
+      document.querySelector("#editable-title").value = note.title;
+      document.querySelector("#editable-content").value = note.content;
