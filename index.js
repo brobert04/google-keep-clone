@@ -132,14 +132,15 @@ async function addNote(){
     });
 }
 
-document.querySelector('#note_form').addEventListener('keypress', event => {
-  if (event.key === 'Enter') {
+document.querySelector('.overlay-submit').addEventListener('click', event => {
+  if(document.querySelector('#note-title').value === '' || document.querySelector('#note-content').value === ''){
+    event.preventDefault();
+  }
+else{
   event.preventDefault();
   addNote();
-  }
+}
 });
-
-
 
 // FUNCTIILE REGASITE IN CARD
 notesContainer.addEventListener('click', async e => {
@@ -147,7 +148,6 @@ notesContainer.addEventListener('click', async e => {
   //functia pentru a sterge o nota
     if (e.target.classList.contains('delete-note-btn')) {
       const noteId = e.target.closest('.note').dataset.noteId;
-      console.log(noteId);
       fetch(`http://localhost:3000/notes/${noteId}`, {
         method: 'DELETE'
       })
@@ -368,7 +368,6 @@ notesContainer.addEventListener('click', async e => {
 // FUNCTIA DE CAUTARE A NOTELOR
 searchInput.addEventListener('input', () => {
   const searchTerm = searchInput.value.toLowerCase();
-  console.log(searchTerm);
   const filteredNotes = notes.filter(note => note.title.toLowerCase().includes(searchTerm) || note.content.toLowerCase().includes(searchTerm));
   displayNotes(filteredNotes);
 });

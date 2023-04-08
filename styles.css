@@ -49,6 +49,13 @@ nav {
   padding: 8px;
   margin: 0 10px;
   color: #5f6368;
+  position: relative;
+  z-index: 2;
+}
+
+nav > * {
+  position: relative;
+  z-index: 2;
 }
 
 .logo-area {
@@ -97,6 +104,12 @@ input:focus {
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
   border: 1px solid #e0e1e0;
   border-radius: 8px;
+  z-index:2;
+  position: relative;
+}
+.form-container > *{
+  z-index:2;
+  position: relative;
 }
 .form-container form {
   display: flex;
@@ -104,6 +117,7 @@ input:focus {
   align-items: center;
   height: 100%;
   color: #5f6368;
+  z-index:2
 }
 .note-title {
   border: none;
@@ -126,7 +140,8 @@ input:focus {
   padding-left: 10px;
   max-height: 6em;
   resize: vertical;
-
+  z-index:2;
+  position: relative;
 }
 .note-color {
   border: none;
@@ -181,6 +196,13 @@ input:focus {
   display: flex;
   padding:25px;
   flex-wrap: wrap;
+  z-index:2;
+  position: relative;
+}
+
+#notes-container > *{
+  z-index:2;
+  position: relative;
 }
 
 .note {
@@ -191,6 +213,7 @@ input:focus {
   border: 1px solid #e0e1e0;
   border-radius: 8px;
   position: relative;
+  z-index:2;
 }
 
 .note .title {
@@ -222,7 +245,7 @@ input:focus {
   width: 300px;
   height: 200px;
   padding: 20px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .modal-content {
@@ -278,7 +301,7 @@ input:focus {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
-  z-index: 1;
+  z-index: 2;
 }
 
 .hidden {
@@ -323,4 +346,15 @@ input:focus {
   .logo-area{
     margin-right: 10px;
   }
+}
+
+.overlay-submit{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }

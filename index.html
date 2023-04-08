@@ -1,104 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Keep</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <nav>
-      <div class="logo-area">
-        <img
-          class="gb_uc gb_7d"
-          src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
-          srcset="
-            https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x,
-            https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x
-          "
-          alt=""
-          aria-hidden="true"
-          style="width: 40px; height: 40px;"
-        />
-        <span class="logo-text">Keep</span>
-      </div>
-      <div class="search-area">
-        <div class="tooltip">
-          <span class="material-icons-outlined hover">search<span>
-          <span class="tooltip-text">Search</span>
-        </div>
-        <input type="text" placeholder="Search" id="searchInput" name="searchInput" />
-      </div>
-      <div class="profile-actions-area">
-        <div class="tooltip">
-          <span class="material-icons-outlined hover">apps</span>
-          <span class="tooltip-text">Apps</span>
-        </div>
-        <div class="tooltip">
-          <span class="material-icons-outlined hover">account_circle</span>
-          <span class="tooltip-text">Account</span>
-        </div>
-      </div>
-    </nav>
-    <main>
-      <div class="form-container">
-          <div class="note-text" id="add">
-            Take a note...
-          </div>
-      </div>
-
-      <div class="form-container active-form" id="add_note" hidden>
-        <form id="note_form">
-          <input type="text" class="note-title" placeholder="Title" id="note-title"required/>
-
-          <textarea class="note-text" id="note-content" placeholder="Take a note..."></textarea>
-          <div class="form-actions">
-            <div class="icons">
-              <div class="tooltip">
-                <span class="material-icons-outlined hover small-icon" id="color-palette">palette</span
-                >
-                <span class="tooltip-text">
-                  <input type="color" id="note-color" name="color-picker" list="color-options" value="#FFFFFF" class="note-color">
-                  <datalist id="color-options">
-                    <option value="#F28B82">Red</option>
-                    <option value="#FBBC04">Orange</option>
-                    <option value="#FFF475">Yellow</option>
-                    <option value="#CCFF90">Green</option>
-                    <option value="#A7FFEB">Teal</option>
-                    <option value="#CBF0F8">Blue</option>
-                    <option value="#AECBFA">Dark Blue</option>
-                    <option value="#D7AEFB">Purple</option>
-                    <option value="#FDCFE8">Pink</option>
-                    <option value="#E6C9A8">Brown</option>
-                    <option value="#E8EAED">Grey</option>
-                  </datalist>
-                </span>
-              </div>
-              <label for="note-image" class="material-icons-outlined hover small-icon">image</label>
-              <input type="file" id="note-image" class="tooltip-text" accept="image/*"></input>
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Google Keep</title>
+      <link
+         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+         rel="stylesheet"
+         />
+      <link rel="stylesheet" href="styles.css" />
+   </head>
+   <body>
+      <nav>
+         <div class="logo-area">
+            <img
+               class="gb_uc gb_7d"
+               src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+               srcset="
+               https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x,
+               https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x
+               "
+               alt=""
+               aria-hidden="true"
+               style="width: 40px; height: 40px;"
+               />
+            <span class="logo-text">Keep</span>
+         </div>
+         <div class="search-area">
+            <div class="tooltip">
+               <span class="material-icons-outlined hover">search<span>
+               <span class="tooltip-text">Search</span>
             </div>
-            <button class="close-btn">Close</button>
-          </div>
-        </form>
-      </div>
-
-      <div id="notes-container">
-      </div>
-
-
-
-      <div class="modal hidden">
-        <div class="modal-content">
-          <div class="form-container active-form">
-            <form id="edit-form">
-              <input type="color" id="edit-note-color" name="color-picker" list="color-options" value="white" class="circle">
-                  <datalist id="color-options">
+            <input type="text" placeholder="Search" id="searchInput" name="searchInput" />
+         </div>
+         <div class="profile-actions-area">
+            <div class="tooltip">
+               <span class="material-icons-outlined hover">apps</span>
+               <span class="tooltip-text">Apps</span>
+            </div>
+            <div class="tooltip">
+               <span class="material-icons-outlined hover">account_circle</span>
+               <span class="tooltip-text">Account</span>
+            </div>
+         </div>
+      </nav>
+      <main>
+         <div class="overlay-submit">
+         </div>
+         <div class="form-container">
+            <div class="note-text" id="add">
+               Take a note...
+            </div>
+         </div>
+         <div class="form-container active-form" id="add_note" hidden>
+            <form id="note_form">
+               <input type="text" class="note-title" placeholder="Title" id="note-title"required/>
+               <textarea class="note-text" id="note-content" placeholder="Take a note..."></textarea>
+               <div class="form-actions">
+                  <div class="icons">
+                     <div class="tooltip">
+                        <span class="material-icons-outlined hover small-icon" id="color-palette">palette</span
+                           >
+                        <span class="tooltip-text">
+                           <input type="color" id="note-color" name="color-picker" list="color-options" value="#FFFFFF" class="note-color">
+                           <datalist id="color-options">
+                              <option value="#F28B82">Red</option>
+                              <option value="#FBBC04">Orange</option>
+                              <option value="#FFF475">Yellow</option>
+                              <option value="#CCFF90">Green</option>
+                              <option value="#A7FFEB">Teal</option>
+                              <option value="#CBF0F8">Blue</option>
+                              <option value="#AECBFA">Dark Blue</option>
+                              <option value="#D7AEFB">Purple</option>
+                              <option value="#FDCFE8">Pink</option>
+                              <option value="#E6C9A8">Brown</option>
+                              <option value="#E8EAED">Grey</option>
+                           </datalist>
+                        </span>
+                     </div>
+                     <label for="note-image" class="material-icons-outlined hover small-icon">image</label>
+                     <input type="file" id="note-image" class="tooltip-text" accept="image/*"></input>
+                  </div>
+                  <button class="close-btn">Close</button>
+               </div>
+            </form>
+         </div>
+         <div id="notes-container">
+         </div>
+         <div class="modal hidden">
+            <div class="modal-content">
+               <div class="form-container active-form">
+                  <form id="edit-form">
+                     <input type="color" id="edit-note-color" name="color-picker" list="color-options" value="white" class="circle">
+                     <datalist id="color-options">
                         <option value="#F28B82">Red</option>
                         <option value="#FBBC04">Orange</option>
                         <option value="#FFF475">Yellow</option>
@@ -110,30 +105,26 @@
                         <option value="#FDCFE8">Pink</option>
                         <option value="#E6C9A8">Brown</option>
                         <option value="#E8EAED">Grey</option>
-                      </datalist>
-              <div class="note-image-modal">
-            
-              </div>
-              <div id="image">
-                <label for="add-note-image" class="material-icons-outlined hover small-icon" id="label-edit-image">image <span>Choose Image</span></label>
-                <input type="file" id="add-note-image" class="tooltip-text" accept="image/*"></input>
-              </div>
-                <div class="form-actions">
-              <button type="button" class="modal-close-btn">Close</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal hidden" id="modal">
-        <div class="modal-content" id="content">
-
-        </div>
-      </div>
-      <div class="overlay hidden"></div>
-      
-    </main>
-    <script src="index.js"></script>
-  </body>
+                     </datalist>
+                     <div class="note-image-modal">
+                     </div>
+                     <div id="image">
+                        <label for="add-note-image" class="material-icons-outlined hover small-icon" id="label-edit-image">image <span>Choose Image</span></label>
+                        <input type="file" id="add-note-image" class="tooltip-text" accept="image/*"></input>
+                     </div>
+                     <div class="form-actions">
+                        <button type="button" class="modal-close-btn">Close</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <div class="modal hidden" id="modal">
+            <div class="modal-content" id="content">
+            </div>
+         </div>
+         <div class="overlay hidden"></div>
+      </main>
+      <script src="index.js"></script>
+   </body>
 </html>
